@@ -17,35 +17,48 @@
             html,body{height:100%;width:100%}
             .scrollable-menu{height:auto;width:auto;max-height:250px;max-width:350px;overflow-x:hidden}
 
-@media (max-width: 768px) {
-  #main-container {
-    flex-direction: column !important;
-  }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
 
-  .ads-row {
-    display: none !important;
-  }
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 16px;
+}
 
-  .ads-col {
-    display: block !important;
-  }
+input, button, .slider {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
 
-  .col-6 {
-    width: 100% !important;
-  }
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
 
-  .input-group,
-  .d-flex.justify-content-around {
-    flex-direction: column;
-    align-items: stretch !important;
-  }
+.slider {
+  -webkit-appearance: none;
+  height: 8px;
+  background: #ddd;
+  border-radius: 4px;
+  outline: none;
+}
 
-  .btn,
-  .form-range,
-  .form-control {
-    width: 100% !important;
-    margin-bottom: 10px;
-  }
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  background: #007BFF;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 		
