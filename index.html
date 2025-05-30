@@ -221,18 +221,21 @@
 		<script>
 function updateMainDivLayout() {
   const container = document.getElementById("main-container");
+  const controler = document.getElementById("6");
   const adsRomElements = document.querySelectorAll(".ads-row");
   const adsColElements = document.querySelectorAll(".ads-col");
   const meta = document.querySelector('meta[name="viewport"]');
 
   // Remove previous layout classes
   container.classList.remove("row", "flex-column");
+  controler.classList.remove("col-6","col-auto");	
 
   const isPortrait = window.innerHeight > window.innerWidth;
 
   if (isPortrait) {
     // Portrait layout
     meta.setAttribute("content", "width=device-width, initial-scale=0.9");
+    controler.classList.add("col-auto");
     container.classList.add("flex-column");
 
     adsRomElements.forEach(el => el.style.display = "none");
@@ -242,6 +245,7 @@ function updateMainDivLayout() {
     // Landscape layout
 	  
     meta.setAttribute("content", "width=device-width, initial-scale=0.5");
+    controler.classList.add("col-6");
     container.classList.add("row");
 
     adsRomElements.forEach(el => el.style.display = "block");
