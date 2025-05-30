@@ -21,7 +21,21 @@
     <body style="overflow: hidden;">
 
         <div id="main-container" class="row min-vh-100 d-flex align-items-center justify-content-center bg-light">
-                    <div class="col-auto">
+		<div class="ads-col col-auto">
+			<script type="text/javascript">
+	atOptions = {
+		'key' : '37fb85fb37118a5ac20ef8103e189f6d',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/37fb85fb37118a5ac20ef8103e189f6d/invoke.js"></script>
+			
+		</div>
+		
+                    <div class="ads-row col-auto">
                         <script type="text/javascript">
 	atOptions = {
 		'key' : 'ec37aa160eaf55e6365f2544c7628357',
@@ -158,7 +172,22 @@
     </div>
   </div>
                     </div>
-                    <div class="col-auto">
+
+<div class="ads-col col-auto">
+			<script type="text/javascript">
+	atOptions = {
+		'key' : '37fb85fb37118a5ac20ef8103e189f6d',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/37fb85fb37118a5ac20ef8103e189f6d/invoke.js"></script>
+			
+		</div>
+		
+                    <div class="ads-row col-auto">
 			    <script type="text/javascript">
 	atOptions = {
 		'key' : 'ec37aa160eaf55e6365f2544c7628357',
@@ -192,27 +221,38 @@
 		<script>
 function updateMainDivLayout() {
   const container = document.getElementById("main-container");
+  const adsRomElements = document.querySelectorAll(".ads-rom");
+  const adsColElements = document.querySelectorAll(".ads-col");
 
-  // Remove both orientation layout classes
+  // Remove previous layout classes
   container.classList.remove("row", "flex-column");
 
   const isPortrait = window.innerHeight > window.innerWidth;
 
-  // Add correct layout
   if (isPortrait) {
+    // Portrait layout
     container.classList.add("flex-column");
+
+    adsRomElements.forEach(el => el.style.display = "none");
+    adsColElements.forEach(el => el.style.display = "block");
+
   } else {
+    // Landscape layout
     container.classList.add("row");
+
+    adsRomElements.forEach(el => el.style.display = "block");
+    adsColElements.forEach(el => el.style.display = "none");
   }
 }
 
-// Run once at start
+// Initial run
 updateMainDivLayout();
 
-// Update on screen resize or rotation
+// Keep layout updated
 window.addEventListener("resize", updateMainDivLayout);
 window.addEventListener("orientationchange", updateMainDivLayout);
 </script>
+
 
 </body>
 </html>
