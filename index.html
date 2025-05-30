@@ -223,6 +223,7 @@ function updateMainDivLayout() {
   const container = document.getElementById("main-container");
   const adsRomElements = document.querySelectorAll(".ads-row");
   const adsColElements = document.querySelectorAll(".ads-col");
+  const meta = document.querySelector('meta[name="viewport"]');
 
   // Remove previous layout classes
   container.classList.remove("row", "flex-column");
@@ -231,6 +232,7 @@ function updateMainDivLayout() {
 
   if (isPortrait) {
     // Portrait layout
+    meta.setAttribute("content", "width=device-width, initial-scale=0.9");
     container.classList.add("flex-column");
 
     adsRomElements.forEach(el => el.style.display = "none");
@@ -238,6 +240,8 @@ function updateMainDivLayout() {
 
   } else {
     // Landscape layout
+	  
+    meta.setAttribute("content", "width=device-width, initial-scale=0.5");
     container.classList.add("row");
 
     adsRomElements.forEach(el => el.style.display = "block");
