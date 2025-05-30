@@ -20,7 +20,7 @@
     </head>
     <body style="overflow: hidden;">
 
-        <div class="row min-vh-100 d-flex align-items-center justify-content-center bg-light">
+        <div id="main-container" class="row min-vh-100 d-flex align-items-center justify-content-center bg-light">
                     <div class="col-auto">
                         <script type="text/javascript">
 	atOptions = {
@@ -189,5 +189,30 @@
         </div>
 
 <script src="index.js"></script>
+		<script>
+function updateMainDivLayout() {
+  const container = document.getElementById("main-container");
+
+  // Remove both orientation layout classes
+  container.classList.remove("row", "flex-column");
+
+  const isPortrait = window.innerHeight > window.innerWidth;
+
+  // Add correct layout
+  if (isPortrait) {
+    container.classList.add("flex-column");
+  } else {
+    container.classList.add("row");
+  }
+}
+
+// Run once at start
+updateMainDivLayout();
+
+// Update on screen resize or rotation
+window.addEventListener("resize", updateMainDivLayout);
+window.addEventListener("orientationchange", updateMainDivLayout);
+</script>
+
 </body>
 </html>
