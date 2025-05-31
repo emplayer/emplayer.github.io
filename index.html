@@ -34,8 +34,8 @@
 <script type="text/javascript" src="//www.highperformanceformat.com/37fb85fb37118a5ac20ef8103e189f6d/invoke.js"></script>
 			
 		</div>
-		
-                    <div class="ads-row col-auto">
+
+		<div class="ads-row col-auto">
                         <script type="text/javascript">
 	atOptions = {
 		'key' : 'ec37aa160eaf55e6365f2544c7628357',
@@ -45,22 +45,22 @@
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/ec37aa160eaf55e6365f2544c7628357/invoke.js"></script>
-
-
-			    
-                        <script type="text/javascript">
-	atOptions = {
-		'key' : 'ec37aa160eaf55e6365f2544c7628357',
-		'format' : 'iframe',
-		'height' : 600,
-		'width' : 160,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/ec37aa160eaf55e6365f2544c7628357/invoke.js"></script>
-			    
+<script type="text/javascript" src="//www.highperformanceformat.com/ec37aa160eaf55e6365f2544c7628357/invoke.js"></script>			    
                     </div>
+		
+                    <div class="ads-row col-auto ads-row-v2">
+                        <script type="text/javascript">
+	atOptions = {
+		'key' : 'ec37aa160eaf55e6365f2544c7628357',
+		'format' : 'iframe',
+		'height' : 600,
+		'width' : 160,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ec37aa160eaf55e6365f2544c7628357/invoke.js"></script>			    
+                    </div>
+		
                     <div id="6" class="col-auto">
                     <div class="d-flex align-items-center justify-content-center" style="height: 100%;">
 <div class="px-3" style="width: 100%; max-width: 1000px;">
@@ -187,7 +187,7 @@
 			
 		</div>
 		
-                    <div class="ads-row col-auto">
+                    <div class="ads-row col-auto ads-row-v2">
 			    <script type="text/javascript">
 	atOptions = {
 		'key' : 'ec37aa160eaf55e6365f2544c7628357',
@@ -198,10 +198,11 @@
 	};
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/ec37aa160eaf55e6365f2544c7628357/invoke.js"></script>
+		    </div>
 
 
 
-
+<div class="ads-row col-auto">
 			    
                         <script type="text/javascript">
 	atOptions = {
@@ -225,6 +226,7 @@ function updateMainDivLayout() {
   const adsRomElements = document.querySelectorAll(".ads-row");
   const adsColElements = document.querySelectorAll(".ads-col");
   const meta = document.querySelector('meta[name="viewport"]');
+  const v2 = document.querySelectorAll(".ads-row-v2");
 
   // Remove previous layout classes
   container.classList.remove("row", "flex-column");
@@ -243,6 +245,14 @@ function updateMainDivLayout() {
 
   } else {
     // Landscape layout
+    if(1375<windows.innerWidth)
+    {
+       v2.forEach(el => el.style.display = "none");
+    }
+    else
+    {
+       v2.forEach(el => el.style.display = "block");
+    }
 	  
     meta.setAttribute("content", "width=device-width, initial-scale=0.5");
     controler.classList.add("col-6");
