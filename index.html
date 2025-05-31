@@ -245,14 +245,6 @@ function updateMainDivLayout() {
 
   } else {
     // Landscape layout
-    if(1375<window.innerWidth)
-    {
-       v2.forEach(el => el.style.display = "none");
-    }
-    else
-    {
-       v2.forEach(el => el.style.display = "block");
-    }
 	  
     meta.setAttribute("content", "width=device-width, initial-scale=0.5");
     controler.classList.add("col-6");
@@ -260,6 +252,15 @@ function updateMainDivLayout() {
 
     adsRomElements.forEach(el => el.style.display = "block");
     adsColElements.forEach(el => el.style.display = "none");
+	  
+    if(1451<window.innerWidth)
+    {
+       v2.forEach(el => el.style.display = "none");
+    }
+    else
+    {
+       v2.forEach(el => el.style.display = "block");
+    }
   }
 }
 
